@@ -99,7 +99,7 @@ export class LoggingMiddleware implements MiddlewareTarget<LoggingState> {
   }
 
   getStatusCode(context: HttpContext<LoggingState>): string {
-    if (context.response.result.status) {
+    if (context.response.result?.status) {
       return context.response.result.status.toString();
     }
     if (context.response.status) {
